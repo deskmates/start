@@ -2,12 +2,10 @@ package com.eileen;
 
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@EnableAutoConfiguration
-public class SampleController {
+@SpringBootApplication
+public class Starter {
 
     @RequestMapping("/abcd")
     @ResponseBody
@@ -16,11 +14,11 @@ public class SampleController {
     }
 
     /*
-    * 多吃点
-    * */
+     * 多吃点
+     * */
 
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
+        SpringApplication.run(Starter.class, args);
     }
 }

@@ -1,0 +1,42 @@
+<html>
+<head>
+
+    <title></title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+    <div>
+        <div >
+            <label>用户名</label>
+            <input type="text" id="username" />
+        </div>
+        <div >
+            <label>密码</label>
+            <input type="text" id="password" />
+        </div>
+        <button id="button1">button</button>
+
+    </div>
+    <script>
+        $("#button1").click(function(){
+            console.log($("#username").val());
+            console.log($("#password").val());
+            var username = $("#username").val();
+            var password = $("#password").val();
+
+            $.ajax({
+                url: "/user/login",
+                data: {username:username,password:password},
+                success: function(result){
+                    console.log(result);
+                }
+            });
+        })
+
+
+    </script>
+
+</body>
+
+</html>
